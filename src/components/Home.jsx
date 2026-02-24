@@ -62,42 +62,50 @@ export default function Home() {
               Hello, I'm
             </motion.p>
 
-            {/* Name with Type Animation */}
+            {/* Main Title */}
             <motion.h1
-              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-4 leading-tight min-h-20 sm:min-h-28 md:min-h-32 lg:min-h-40"
+              className="text-3xl sm:text-5xl md:text-7xl lg:text-6xl font-bold text-primary mb-6 leading-tight"
+              variants={itemVariants}
+            >
+              Full Stack Developer
+            </motion.h1>
+
+            {/* Type Animation - Developer Roles */}
+            <motion.div
+              className="text-lg sm:text-2xl md:text-3xl text-white font-semibold mb-6 min-h-12"
               variants={itemVariants}
             >
               <TypeAnimation
                 sequence={[
-                  'PAVITHRA',
-                  400,
-                  'PAVITHRA GANAPATHY',
-                  800,
-                  'PAVITHRA GANAPATHY ',
-                  400,
+                  'Web Developer',
+                  1500,
+                  'frontend enthusiast',
+                  1500,
+                  'Technophile',
+                  1500,
                 ]}
                 wrapper="span"
                 speed={50}
                 repeat={Infinity}
                 cursor={true}
-                style={{ display: 'inline-block' }}
+                style={{ display: 'inline-block', color: '#dc2626' }}
               />
-            </motion.h1>
+            </motion.div>
 
-            {/* Subtitle */}
+            {/* Enthusiastic Quote */}
             <motion.p
-              className="text-lg sm:text-2xl md:text-3xl text-white font-semibold mb-6"
+              className="text-sm sm:text-base md:text-lg text-lightGray mb-8 leading-relaxed max-w-lg italic font-semibold"
               variants={itemVariants}
             >
-              Full Stack Developer
+              "Building amazing digital experiences, one line of code at a time."
             </motion.p>
-
-            {/* Summary */}
+            
+            {/* Present Status */}
             <motion.p
-              className="text-sm sm:text-base md:text-lg text-lightGray mb-8 leading-relaxed max-w-lg"
+              className="text-xs sm:text-sm md:text-base text-primary font-semibold mb-8 uppercase tracking-wider"
               variants={itemVariants}
             >
-              Motivated Full Stack Developer with experience in building end-to-end web applications featuring responsive, user-friendly interfaces, robust backend systems, and efficient database management.
+             Currently Available for Opportunities
             </motion.p>
             {/* Social Icons - Ultra Catchy */}
             <motion.div
@@ -225,20 +233,8 @@ export default function Home() {
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              {/* Glowing Border Circle */}
-              <motion.div
-                className="absolute inset-0 rounded-full border-4 border-primary animate-glow"
-              />
-
-              {/* Profile Image */}
-              <div className="w-full h-full rounded-full bg-darkCard border-4 border-primary/30 flex items-center justify-center overflow-hidden shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-darkBg flex items-center justify-center">
-                  <span className="text-5xl sm:text-6xl md:text-7xl font-bold text-primary/30">PG</span>
-                </div>
-              </div>
-
-              {/* Background Glow */}
-              <div className="absolute -inset-8 rounded-full blur-2xl bg-primary/10 -z-10" />
+            
+              
             </motion.div>
           </motion.div>
         </div>

@@ -32,7 +32,32 @@ export default function Projects() {
       demo: 'https://rainfall-predict-frontend.vercel.app/',
       image: require('../assets/project 3.png'),
       imageHeight: { mobile: '180px', desktop: '240px' },
-    }
+    },
+    {
+  id: 4,
+  title: 'Crazy Gaming Platform',
+  techStack: 'React.js, Tailwind CSS, JavaScript',
+  description: 'Built a fully responsive browser-based gaming platform featuring classic mini-games like Tic-Tac-Toe, Snake Game, Memory Game, Guess the Number, and Rock Paper Scissors. Designed with a mobile-first approach, smooth animations, and real-time score tracking to deliver a seamless and engaging experience across all devices.',
+  github: [
+    'https://github.com/G-Pavithra8/Gaming-website'
+  ],
+  demo: 'https://letsplay-game.netlify.app/',
+  image: require('../assets/project 4.png'),
+  imageHeight: { mobile: '180px', desktop: '240px' },
+},
+{
+  id: 5,
+  title: 'Evolve Beauty Website',
+  techStack: 'React.js, Tailwind CSS, JavaScript',
+  description: 'Developed a modern desktop-focused frontend beauty website with an elegant UI. Built interactive product sections, wishlist functionality, and smooth navigation using React and Tailwind CSS. Deployed the project on Netlify for production.',
+   github: [
+    'https://github.com/G-Pavithra8/Beauty-Website'
+  ],
+  demo: 'https://beautiqo.netlify.app/',
+  image: require('../assets/project 5.png'),
+  imageHeight: { mobile: '180px', desktop: '240px' },
+}
+
   ];
 
   const containerVariants = {

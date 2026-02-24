@@ -1,6 +1,19 @@
 import { motion } from "framer-motion";
+import profileImg from "../assets/photo.png";
 
 export default function About() {
+  // Animation variant for text reveal
+  const textRevealVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1, 
+      transition: { 
+        staggerChildren: 0.05,
+        delayChildren: 0.2
+      }
+    }
+  };
+
   return (
     <section id="about" className="bg-black py-20 md:py-32 px-4 md:px-6">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
@@ -11,13 +24,17 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
+          {/* Animated Greeting */}
           <motion.h2 
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 leading-tight"
+            variants={textRevealVariants}
+            initial="hidden"
+            whileInView="visible"
+            
           >
-            About <span className="text-red-600">Me</span>
+            <motion.span className="text-red-600 inline-block">
+              About Myself,
+            </motion.span>
           </motion.h2>
 
           {/* Simple Animated Red Line */}
@@ -28,140 +45,62 @@ export default function About() {
             transition={{ duration: 0.7 }}
           />
 
-          <motion.p 
-            className="text-gray-300 text-base md:text-lg leading-relaxed mb-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            Full Stack Developer from <span className="text-red-600 font-semibold">Meenakshi Sundararajan Engineering College</span>. I specialize in designing and deploying scalable web applications with modern frontend frameworks and robust backend systems, focusing on user-centric solutions.
-          </motion.p>
-
-          <motion.p 
-            className="text-gray-400 text-base md:text-lg leading-relaxed mb-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            Expertise in Core Java and React.js with a passion for clean code, performance optimization, and mentoring. I'm committed to building applications that solve real problems and deliver measurable impact.
-          </motion.p>
-
-          <motion.p 
-            className="text-gray-400 text-base md:text-lg leading-relaxed"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            Deeply interested in emerging technologies like AI-driven systems and explainable AI. My goal is to bridge innovative technology with practical business solutions.
-          </motion.p>
-        </motion.div>
-
-        {/* Right Side - Professional Stats */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="grid sm:grid-cols-2 gap-4 md:gap-6"
-        >
-          <motion.div
-            className="bg-[#111] p-6 md:p-8 rounded-xl border border-red-600/20 hover:border-red-600/50 transition-colors cursor-pointer"
-            whileHover={{ y: -6, boxShadow: '0 15px 30px rgba(220, 38, 38, 0.15)' }}
-            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false }}
-          >
-            <motion.p 
-              className="text-gray-400 text-xs md:text-sm uppercase tracking-wider font-semibold"
-              whileHover={{ color: '#dc2626' }}
-              transition={{ duration: 0.2 }}
+          {/* About Me Text */}
+          <motion.div className="space-y-6">
+            <motion.p
+              className="text-gray-300 text-base md:text-lg leading-relaxed"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Experience
+              Hi, I’m <span className="text-red-600 font-semibold">Pavithra</span>, a passionate <span className="text-red-600 font-semibold">Final Year Student</span> at <span className="text-red-600 font-semibold">Meenakshi Sundararajan Engineering College</span>. I specialize in building <strong>scalable, user-centric web applications</strong> that deliver real impact.
             </motion.p>
-            <motion.h3 
-              className="text-4xl md:text-5xl font-bold text-white mt-3"
-              whileHover={{ scale: 1.08, color: '#dc2626' }}
-              transition={{ duration: 0.3 }}
-            >
-              2+
-            </motion.h3>
-            <p className="text-gray-500 text-sm mt-1">Years</p>
-          </motion.div>
 
-          <motion.div
-            className="bg-[#111] p-6 md:p-8 rounded-xl border border-red-600/20 hover:border-red-600/50 transition-colors cursor-pointer"
-            whileHover={{ y: -6, boxShadow: '0 15px 30px rgba(220, 38, 38, 0.15)' }}
-            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false }}
-          >
-            <motion.p 
-              className="text-gray-400 text-xs md:text-sm uppercase tracking-wider font-semibold"
-              whileHover={{ color: '#dc2626' }}
-              transition={{ duration: 0.2 }}
+            <motion.p
+              className="text-gray-400 text-base md:text-lg leading-relaxed"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Internships
+              <span className="text-red-600 font-semibold">Current CGPA: 8.9</span> I’m focused on <strong>Full Stack Development</strong>, with expertise in <strong>React.js, Core Java,</strong> and modern backend technologies. I’m passionate about <strong>clean code, performance optimization,</strong> and delivering solutions that matter.
             </motion.p>
-            <motion.h3 
-              className="text-4xl md:text-5xl font-bold text-white mt-3"
-              whileHover={{ scale: 1.08, color: '#dc2626' }}
-              transition={{ duration: 0.3 }}
-            >
-              3+
-            </motion.h3>
-            <p className="text-gray-500 text-sm mt-1">Completed</p>
-          </motion.div>
 
-          <motion.div
-            className="bg-[#111] p-6 md:p-8 rounded-xl border border-red-600/20 hover:border-red-600/50 transition-colors cursor-pointer"
-            whileHover={{ y: -6, boxShadow: '0 15px 30px rgba(220, 38, 38, 0.15)' }}
-            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false }}
-          >
-            <motion.p 
-              className="text-gray-400 text-xs md:text-sm uppercase tracking-wider font-semibold"
-              whileHover={{ color: '#dc2626' }}
-              transition={{ duration: 0.2 }}
+            <motion.p
+              className="text-gray-400 text-base md:text-lg leading-relaxed"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Projects
+              I am deeply curious about <strong>emerging technologies like AI-driven systems</strong> and exploring the intersection of innovation and practical solutions. Always eager to learn, grow, and contribute to impactful projects!!
             </motion.p>
-            <motion.h3 
-              className="text-4xl md:text-5xl font-bold text-white mt-3"
-              whileHover={{ scale: 1.08, color: '#dc2626' }}
-              transition={{ duration: 0.3 }}
-            >
-              5+
-            </motion.h3>
-            <p className="text-gray-500 text-sm mt-1">Completed</p>
-          </motion.div>
 
-          <motion.div
-            className="bg-[#111] p-6 md:p-8 rounded-xl border border-red-600/20 hover:border-red-600/50 transition-colors cursor-pointer"
-            whileHover={{ y: -6, boxShadow: '0 15px 30px rgba(220, 38, 38, 0.15)' }}
-            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false }}
-          >
-            <motion.p 
-              className="text-gray-400 text-xs md:text-sm uppercase tracking-wider font-semibold"
-              whileHover={{ color: '#dc2626' }}
-              transition={{ duration: 0.2 }}
+            <motion.p
+              className="text-gray-400 text-base md:text-lg leading-relaxed"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
             >
-              Tech Stack
+              Apart from coding, I’m also passionate about <span className="text-red-600 font-semibold">Radio Jockeying (RJ)</span> — I love connecting with people, sharing stories, and exploring the world of creative expression behind the mic! 
             </motion.p>
-            <motion.h3 
-              className="text-base md:text-lg font-semibold text-white mt-3"
-              whileHover={{ scale: 1.05, color: '#dc2626' }}
-              transition={{ duration: 0.3 }}
-            >
-              React · Node · Flask · AI
-            </motion.h3>
           </motion.div>
         </motion.div>
+
+      <motion.div
+  className="w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] 
+  rounded-full overflow-hidden 
+  border-4 border-red-600 
+  shadow-[0_0_30px_rgba(220,38,38,0.6)] 
+  bg-black flex items-center justify-center"
+  animate={{ y: [0, -20, 0] }}
+  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+>
+  <img
+    src={profileImg}
+    alt="Profile"
+    className="w-full h-full object-cover object-[50%_35%] scale-110"
+  />
+</motion.div>
+
 
       </div>
     </section>
