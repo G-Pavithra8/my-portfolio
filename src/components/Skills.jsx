@@ -29,7 +29,7 @@ export default function Skills() {
       skills: [
         { name: "MySQL", icon: SiMysql } ,
         { name: "MongoDB", icon: SiMongodb },
-        ,
+        
       ],
     },
     {
