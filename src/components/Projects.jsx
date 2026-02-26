@@ -7,7 +7,7 @@ export default function Projects() {
       id: 1,
       title: 'PathFinder',
       techStack: 'React.js, Flask, MongoDB',
-      description: 'Developed a college-search and career-guidance platform with secure login, dynamic filtering, student help desk, and responsive UI. Implemented session-based authentication to ensure data security and maintain a responsive interface.',
+      description: 'Developed a college-search and career-guidance platform suitable only for website view. Implemented secure login and authentication using MongoDB for user data, college information, and student help desk. Features include dynamic filtering, responsive UI, and a student help desk for guidance.',
       github: ['https://github.com/G-Pavithra8/PathFinder', 'https://github.com/G-Pavithra8/Pathfinder-Backend'],
       demo: 'https://path-finder-five-ivory.vercel.app/',
       image: require('../assets/project 1.png'),
@@ -17,7 +17,7 @@ export default function Projects() {
       id: 2,
       title: 'FairCred – Staff Insights Platform',
       techStack: 'React + Vite, Flask, MySQL, ML',
-      description: 'Built a performance transparency platform that empowers managers with AI-driven staff insights and visual feedback. Integrated SHAP explainability to help staff and management understand performance scoring.',
+      description: 'Developed a web-focused performance transparency platform, empowering managers with AI-driven staff insights and interactive visual feedback. Integrated SHAP explainability to deliver clear and interpretable performance scoring for both staff and management.',
       github: ['https://github.com/G-Pavithra8/staff-salary-frontend', 'https://github.com/G-Pavithra8/staff-salary-backend'],
       demo: 'https://staff-salary-frontend.vercel.app/',
       image: require('../assets/project 2.png'),
@@ -36,7 +36,7 @@ export default function Projects() {
     {
   id: 4,
   title: 'Crazy Gaming Platform',
-  techStack: 'React.js, Tailwind CSS, JavaScript',
+  techStack: 'React.js, Tailwind CSS',
   description: 'Built a fully responsive browser-based gaming platform featuring classic mini-games like Tic-Tac-Toe, Snake Game, Memory Game, Guess the Number, and Rock Paper Scissors. Designed with a mobile-first approach, smooth animations, and real-time score tracking to deliver a seamless and engaging experience across all devices.',
   github: [
     'https://github.com/G-Pavithra8/Gaming-website'
@@ -48,7 +48,7 @@ export default function Projects() {
 {
   id: 5,
   title: 'Evolve Beauty Website',
-  techStack: 'React.js, Tailwind CSS, JavaScript',
+  techStack: 'React.js, Tailwind CSS',
   description: 'Developed a modern desktop-focused frontend beauty website with an elegant UI. Built interactive product sections, wishlist functionality, and smooth navigation using React and Tailwind CSS. Deployed the project on Netlify for production.',
    github: [
     'https://github.com/G-Pavithra8/Beauty-Website'
