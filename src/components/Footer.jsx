@@ -20,7 +20,7 @@ export default function Footer() {
             <p className="text-lightGray text-sm md:text-base flex items-center justify-center md:justify-start gap-2 flex-wrap">
               Made with
               <FaHeart className="text-primary animate-pulse text-sm" />
-              by Pavithra Ganapathy
+              by Pavithra Ganapathi
             </p>
             <p className="text-xs md:text-sm text-lightGray/60">© {currentYear} All rights reserved.</p>
           </motion.div>
@@ -44,7 +44,7 @@ export default function Footer() {
               Designed & Built by
             </p>
             <p className="text-white font-semibold hover:text-primary transition cursor-pointer text-sm md:text-base">
-              Pavithra Ganapathy
+              Pavithra Ganapathi
             </p>
           </motion.div>
         </div>
