@@ -1,36 +1,51 @@
 import { motion } from "framer-motion";
-import { FaBriefcase, FaCalendarAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaCalendarAlt } from "react-icons/fa";
 
 export default function Internships() {
   const internships = [
     {
-      company: "Code Bind Technologies",
-      role: "Web Development Intern",
-      duration: "2024 • 1 Month • On-site",
+  company: "Finari Services Private Limited",
+  role: "Full Stack Developer",
+  duration: "2026 • 1 Month • Hybrid",
+  certificate: "",
+  description:
+    "Worked on Full Stack Development concepts with exposure to ERP frameworks, Multi-Tenant Architecture, AWS fundamentals, and Version Control practices. Gained valuable insights into business workflows and the role of technology in supporting business operations.",
+},
+        {
+      company: "Evolve Solution",
+      role: "Full Stack Developer",
+      duration: "2026 • 3 Month • On-site ",
+      certificate: "https://drive.google.com/file/d/1IpuXCPxEldPnV6vIs0SRX6PH3tRteeqI/view?usp=sharing",
       description:
-        "Gained foundational experience in HTML, CSS, and MySQL, contributing to responsive web pages and basic database management.",
+        "Engaged in full-stack web development, building scalable applications with modern frameworks and robust backend solutions.",
     },
-    {
-      company: "Cognify Technologies",
-      role: "Frontend Development Intern",
-      duration: "2025 • 1 Month • Remote",
-      description:
-        "Worked on interactive UI designs, integrating JavaScript functionalities with REST APIs for seamless user experience.",
-    },
-    {
+     {
       company: "InetZ Technologies",
-      role: "Java Programmer Intern",
+      role: "Java Programmer",
       duration: "2025 • 1 Month • On-site",
+      certificate: "https://drive.google.com/file/d/1P-kf5md4T8R6jZq82UscxpUT2oroNwQY/view?usp=sharing",
       description:
         "Strongly Focused on OOP concepts with hands-on projects, developing real-world applications and enhancing programming proficiency.",
     },
     {
-      company: "Evolve Solution (Currently Ongoing)",
-      role: "Full Stack Web Development Intern",
-      duration: "2026 • 3 Month • On-site ",
+      company: "Cognify Technologies",
+      role: "Frontend Developer",
+      duration: "2025 • 1 Month • Remote",
+      certificate: "https://drive.google.com/file/d/1hYpVbYva6xVlA3QNz4ENutvEktaYte5c/view?usp=sharing",
       description:
-        "Engaged in full-stack web development, building scalable applications with modern frameworks and robust backend solutions.",
+        "Worked on interactive UI designs, integrating JavaScript functionalities with REST APIs for seamless user experience.",
     },
+    {
+      company: "Code Bind Technologies",
+      role: "Web Developer",
+      duration: "2024 • 1 Month • On-site",
+      certificate: "https://drive.google.com/file/d/1WVhkzap0KyITl-NsyVPmFY2QoxSBEQEB/view?usp=sharing",
+      description:
+        "Gained foundational experience in HTML, CSS, and MySQL, contributing to responsive web pages and basic database management.",
+    },
+    
+   
+
   ];
 
   return (
@@ -71,11 +86,23 @@ export default function Internships() {
               {/* Card */}
               <div className="bg-black p-5 md:p-6 rounded-lg shadow-lg hover:shadow-red-600/40 transition-all duration-300 hover:-translate-y-2">
                 <div className="flex justify-between items-start md:items-center mb-2 gap-4">
-                  <h3 className="text-lg md:text-xl font-semibold text-white">
-                    {intern.role}
-                  </h3>
-                  <FaBriefcase className="text-red-600 flex-shrink-0" />
-                </div>
+  <h3 className="text-lg md:text-xl font-semibold text-white">
+    {intern.role}
+  </h3>
+
+  {intern.certificate && (
+  <a
+    href={intern.certificate}
+    target="_blank"
+    rel="noopener noreferrer"
+    title="View Certificate"
+  >
+    <FaExternalLinkAlt
+      className="text-red-600 flex-shrink-0 cursor-pointer hover:scale-110 transition-all duration-200"
+    />
+  </a>
+)}
+</div>
 
                 <p className="text-red-600 font-medium text-sm md:text-base">
                   {intern.company}

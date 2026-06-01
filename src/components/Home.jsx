@@ -18,7 +18,7 @@ export default function Home() {
 
   const handleDownloadCV = () => {
     // Direct download from Google Drive
-    const downloadUrl = 'https://drive.google.com/uc?export=download&id=1jUt22Xgn2yFAk2sRSuu90ZeuzuHWiqc0';
+    const downloadUrl = 'https://drive.google.com/uc?export=download&id=1DoufaC_KkXFldq91zr_z9iaapPT8ME_w';
     const link = document.createElement('a');
     link.href = downloadUrl;
     link.download = 'Pavithra_Ganapathy_Resume.pdf';
