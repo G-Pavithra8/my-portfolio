@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,42 +14,105 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const [errors, setErrors] = useState({
+  name: "",
+  email: "",
+  message: "",
+});
   const ease = [0.25, 0.1, 0.25, 1]; // professional easing
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+  let { name, value } = e.target;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
+  // Name: Only alphabets and spaces
+  if (name === "name") {
+    if (!/^[A-Za-z ]*$/.test(value)) {
+      return;
+    }
+  }
 
-    emailjs
-      .send(
-        "service_3f7rpzm",
-        "template_ng4wfmu",
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-        },
-        "uwsMn6wMArp42xse0"
-      )
-      .then(() => {
-        setSubmitted(true);
-        setLoading(false);
-        setFormData({ name: "", email: "", message: "" });
-        setTimeout(() => setSubmitted(false), 4000);
-      })
-      .catch((error) => {
-        console.error("Email Error:", error);
-        setLoading(false);
+  // Email: Convert to lowercase automatically
+  if (name === "email") {
+    value = value.toLowerCase();
+  }
+
+  setFormData((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
+};
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const newErrors = {
+  name: "",
+  email: "",
+  message: "",
+};
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//NAME VALIDATION
+if (formData.name.trim().length < 3) {
+  newErrors.name = "Name must be at least 3 letters";
+}
+//EMAIL VALIDATION
+if (!emailRegex.test(formData.email)) {
+  newErrors.email = "Enter a valid email";
+}
+//MESSAGE VALIDATION
+if (formData.message.trim().length < 10) {
+  newErrors.message = "Message must be at least 10 characters";
+}
+
+setErrors(newErrors);
+
+if (
+  newErrors.name ||
+  newErrors.email ||
+  newErrors.message
+) {
+  return;
+}
+
+  setLoading(true);
+
+  emailjs
+    .send(
+      "service_3f7rpzm",
+      "template_ng4wfmu",
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      },
+      "uwsMn6wMArp42xse0"
+    )
+    .then(() => {
+      setSubmitted(true);
+      setLoading(false);
+
+      toast.success(
+        "Message sent successfully! I'll get back to you soon."
+      );
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
       });
-  };
+
+      setTimeout(() => setSubmitted(false), 4000);
+    })
+    .catch((error) => {
+      console.error("Email Error:", error);
+
+      setLoading(false);
+
+      toast.error(
+        "Failed to send message. Please try again later."
+      );
+    });
+};
 
   return (
     <section id="contact" className="bg-[#111] py-20 px-6 md:px-20">
@@ -111,20 +175,20 @@ export default function Contact() {
               })}
             </div>
 
-            <motion.p
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-  viewport={{ once: true }}
-  className="text-gray-400 max-w-md"
->
-  Got something exciting to discuss? 
-  <br />
-  <span className="text-red-500">
-    Drop a message — let’s make it happen.
-  </span>
-</motion.p>
-          </motion.div>
+                    <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true }}
+          className="text-gray-400 max-w-md"
+        >
+          Got something exciting to discuss? 
+          <br />
+          <span className="text-red-500">
+            Drop a message — let’s make it happen.
+          </span>
+        </motion.p>
+                  </motion.div>
 
           {/* RIGHT SIDE FORM */}
           <motion.form
@@ -146,32 +210,54 @@ export default function Contact() {
                 viewport={{ once: true }}
               >
                 {field !== "message" ? (
-                  <input
-                    type={field === "email" ? "email" : "text"}
-                    name={field}
-                    placeholder={
-                      field === "name"
-                        ? "Your Name"
-                        : field === "email"
-                        ? "Your Email"
-                        : ""
-                    }
-                    value={formData[field]}
-                    onChange={handleChange}
-                    required
-                    className="w-full p-4 bg-[#111] border border-red-600/20 rounded-lg text-white focus:border-red-600 outline-none transition"
-                  />
-                ) : (
-                  <textarea
-                    name="message"
-                    rows="4"
-                    placeholder="Your Message..."
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="w-full p-4 bg-[#111] border border-red-600/20 rounded-lg text-white focus:border-red-600 outline-none transition resize-none"
-                  />
-                )}
+  <>
+    <input
+      type={field === "email" ? "email" : "text"}
+      name={field}
+      placeholder={
+        field === "name"
+          ? "Your Name"
+          : field === "email"
+          ? "Your Email"
+          : ""
+      }
+      value={formData[field]}
+      onChange={handleChange}
+      required
+      className="w-full p-4 bg-[#111] border border-red-600/20 rounded-lg text-white focus:border-red-600 outline-none transition"
+    />
+
+    {field === "name" && errors.name && (
+      <p className="text-red-400 text-sm mt-2">
+        {errors.name}
+      </p>
+    )}
+
+    {field === "email" && errors.email && (
+      <p className="text-red-400 text-sm mt-2">
+        {errors.email}
+      </p>
+    )}
+  </>
+) : (
+  <>
+    <textarea
+      name="message"
+      rows="4"
+      placeholder="Your Message..."
+      value={formData.message}
+      onChange={handleChange}
+      required
+      className="w-full p-4 bg-[#111] border border-red-600/20 rounded-lg text-white focus:border-red-600 outline-none transition resize-none"
+    />
+
+    {errors.message && (
+      <p className="text-red-400 text-sm mt-2">
+        {errors.message}
+      </p>
+    )}
+  </>
+)}
               </motion.div>
             ))}
 

@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Landing from './components/Landing';
 import { useState } from 'react';
+import { Toaster } from "react-hot-toast";
 
 
 function App() {
@@ -21,6 +22,20 @@ function App() {
       {showLanding && <Landing onFinish={() => setShowLanding(false)} />}
       {!showLanding && (
         <>
+          //for the contact page toast notification
+<Toaster
+  position="top-right"
+  toastOptions={{
+    duration: 3000,
+    style: {
+      background: "#111",
+      color: "#fff",
+      border: "1px solid #dc2626",
+      maxWidth: "300px",
+      fontSize: "14px",
+    },
+  }}
+/>
           <Navbar />
           <Home />
           <About />
