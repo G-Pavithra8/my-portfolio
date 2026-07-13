@@ -10,6 +10,7 @@ import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Landing from './components/Landing';
+// Importing React and useState
 import { useState } from 'react';
 
 
