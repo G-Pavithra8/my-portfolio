@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaReact, FaHtml5, FaCss3, FaJs, FaNodeJs, FaJava, FaGitAlt } from "react-icons/fa";
-import { SiTailwindcss, SiMongodb, SiMysql, SiFlask } from "react-icons/si";
+import { SiTailwindcss, SiMongodb, SiMysql, SiFlask, SiSpringboot} from "react-icons/si";
 
 export default function Skills() {
 
@@ -18,9 +18,9 @@ export default function Skills() {
     {
       title: "Backend",
       skills: [
-        { name: "Java", icon: FaJava },
-        { name: "Flask", icon: SiFlask },
-        { name: "Node.js", icon: FaNodeJs },
+         { name: "Node.js", icon: FaNodeJs },
+          { name: "Spring Boot", icon: SiSpringboot },
+          { name: "Flask", icon: SiFlask },
         
       ],
     },

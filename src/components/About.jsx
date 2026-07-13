@@ -52,24 +52,23 @@ export default function About() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              style={{ textAlign: "justify" }}
             >
-              Hi, I’m <span className="text-red-600 font-semibold">Pavithra</span>, a passionate <span className="text-red-600 font-semibold">Final Year Student</span> at <span className="text-red-600 font-semibold">Meenakshi Sundararajan Engineering College</span>. I specialize in building <strong>scalable, user-centric web applications</strong> that deliver real impact.
-            </motion.p>
-
+            Hi, I’m <span className="text-red-600 font-semibold">Pavithra</span>, a <span className="text-red-600 font-semibold">B.Tech Information Technology Graduate</span> and aspiring <span className="text-red-600 font-semibold">Full Stack Developer</span> from <span className="text-red-600 font-semibold">Meenakshi Sundararajan Engineering College</span>. With a strong interest in web development, I enjoy building <strong>scalable, user-centric web applications</strong> and continuously enhancing my skills in modern technologies to develop impactful and innovative solutions. </motion.p>
             <motion.p
               className="text-gray-400 text-base md:text-lg leading-relaxed"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
+              style={{ textAlign: "justify" }}
             >
-              <span className="text-red-600 font-semibold">Current CGPA: 8.9</span> I’m focused on <strong>Full Stack Development</strong>, with expertise in <strong>React.js, Core Java,</strong> and modern backend technologies. I’m passionate about <strong>clean code, performance optimization,</strong> and delivering solutions that matter.
-            </motion.p>
-
-            <motion.p
+             <span className="text-red-600 font-semibold">Current CGPA: 8.9</span> with hands-on experience in <strong>React.js, Node.js, MongoDB, and Core Java</strong>. Currently developing backend expertise through <strong>Spring Boot</strong> while focusing on building <strong>responsive, scalable, and user-centric applications</strong> using clean and maintainable code. </motion.p>
+              <motion.p
               className="text-gray-400 text-base md:text-lg leading-relaxed"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
+              style={{ textAlign: "justify" }}
             >
               I am deeply curious about <strong>emerging technologies like AI-driven systems</strong> and exploring the intersection of innovation and practical solutions. Always eager to learn, grow, and contribute to impactful projects!!
             </motion.p>
@@ -79,6 +78,7 @@ export default function About() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
+              style={{ textAlign: "justify" }}
             >
               Apart from coding, I’m also passionate about <span className="text-red-600 font-semibold">Radio Jockeying (RJ)</span> — I love connecting with people, sharing stories, and exploring the world of creative expression behind the mic! 
             </motion.p>
