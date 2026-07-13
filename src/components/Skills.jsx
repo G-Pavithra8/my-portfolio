@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaReact, FaHtml5, FaCss3, FaJs, FaNodeJs, FaJava, FaGitAlt } from "react-icons/fa";
+import { FaReact, FaHtml5, FaCss3, FaJs, FaNodeJs, FaGitAlt } from "react-icons/fa";
 import { SiTailwindcss, SiMongodb, SiMysql, SiFlask, SiSpringboot} from "react-icons/si";
 
 export default function Skills() {
